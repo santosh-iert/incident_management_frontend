@@ -23,9 +23,9 @@ const LoginPage = () => {
         try {
             const response = await axios.post('http://localhost:8000/user/login/', credentials);
             // Store authentication token or user info
-            localStorage.setItem('user', JSON.stringify(response.data));
+            localStorage.setItem('user_token', response.data.token);
             // Redirect to dashboard or incidents page
-            window.location.href = '/';
+            window.location.href = '/incedents';
         } catch (error) {
             setError('Invalid Email or password');
             console.error('Login failed', error);
@@ -55,8 +55,8 @@ const LoginPage = () => {
               required 
             />
             <button className="login-button" type="submit">LOGIN ME</button>
-            <a href="#" className="forgot-password">
-              Forgot password?
+            <a href="/" className="forgot-password">
+              Not Registered? Register Here
             </a>
           </div>
           </form>

@@ -33,7 +33,6 @@ const RegistrationPage = () => {
         console.log(response)
         alert(response.data.message)
         navigate('/login');
-        // setMessage(response.data.message);
 
     } catch (error) {
         console.log("Error", error.response.data.email[0])
@@ -228,6 +227,9 @@ const RegistrationPage = () => {
         <button type="submit" className="registration-button">
           SIGN UP
         </button>
+          <a href="/login" className="forgot-password">
+              Already Registered? Login
+          </a>
       </form>
     </div>
   );
